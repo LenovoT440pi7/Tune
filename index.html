@@ -18,6 +18,27 @@
 			// Submit the form to the server
 			document.getElementById("login-form").submit();
 		}
+
+		// Handle new user registration
+		function register() {
+			// Get the username and password input fields
+			var username = document.getElementById("new-username").value;
+			var password = document.getElementById("new-password").value;
+			var confirmPassword = document.getElementById("confirm-password").value;
+
+			// Perform input validation
+			if (username === "" || password === "" || confirmPassword === "") {
+				alert("Please enter a username, password, and confirm password.");
+				return;
+			}
+			if (password !== confirmPassword) {
+				alert("Passwords do not match.");
+				return;
+			}
+
+			// Submit the form to the server
+			document.getElementById("register-form").submit();
+		}
 	</script>
 </head>
 <body>
@@ -28,6 +49,17 @@
 		<label for="password">Password:</label>
 		<input type="password" id="password" name="password"><br><br>
 		<input type="button" value="Login" onclick="login()">
+	</form>
+	<br>
+	<h2>New User Registration</h2>
+	<form id="register-form" method="post" action="register.php">
+		<label for="new-username">Username:</label>
+		<input type="text" id="new-username" name="new-username"><br><br>
+		<label for="new-password">Password:</label>
+		<input type="password" id="new-password" name="new-password"><br><br>
+		<label for="confirm-password">Confirm Password:</label>
+		<input type="password" id="confirm-password" name="confirm-password"><br><br>
+		<input type="button" value="Register" onclick="register()">
 	</form>
 </body>
 </html>
