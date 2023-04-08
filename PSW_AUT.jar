@@ -22,3 +22,14 @@ public class PasswordRegistrationBot {
         return true; // Replace with actual validation logic
     }
 }
+
+
+@Controller
+public class MyController {
+    @RequestMapping("/hello")
+    public ModelAndView sayHello(@RequestParam("name") String name) {
+        ModelAndView mv = new ModelAndView("hello");
+        mv.addObject("name", name);
+        return mv;
+    }
+}
