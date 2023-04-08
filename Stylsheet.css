@@ -1,11 +1,10 @@
 
-h1{
-  font-size: 12px;
+label{
+  font: arial;
   font-family: fantasy;
+  font-size: 12px;
 }
-
-
-}
-*{
-
+input{
+  font-size: 20px;
+  font-style: oblique;
 }
