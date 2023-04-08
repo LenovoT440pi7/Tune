@@ -1,0 +1,11 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+def calculate(num1, num2):
+    return num1 + num2
+
+    @app.route('/')
+    def home():
+        result = calculate(2, 3)
+        return render_template('index.html', result=result)
